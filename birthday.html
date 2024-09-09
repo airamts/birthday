@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to top, #000428, #004e92);
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    canvas {
+      border: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://i.imgur.com/gZCudR5.png') repeat;
+      animation: starAnimation 50s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes starAnimation {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 10000px; }
+    }
+
+    #input-container {
+      position: absolute;
+      top: 10%;
+      text-align: center;
+      z-index: 2;
+      color: white;
+    }
+
+    label, input {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    input[type="text"], input[type="date"] {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: #FF6F61;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff4b47;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 80px;
+      height: 100px;
+      background-color: pink;
+      border-radius: 50%;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      z-index: 0;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .balloon:nth-child(2) {
+      background-color: lightblue;
+      animation-duration: 7s;
+      left: 20%;
+    }
+
+    .balloon:nth-child(3) {
+      background-color: lightgreen;
+      animation-duration: 8s;
+      left: 50%;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-100px);
+      }
+    }
+
+    .birthday-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+      display: none;
+    }
+
+    .birthday-message h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .birthday-message p {
+      font-size: 1.5rem;
+    }
+
+    iframe {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 300px;
+      height: 200px;
+      border: none;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div id="input-container">
+    <label for="nama">Nama: </label>
+    <input type="text" id="nama" placeholder="Masukkan Nama" required>
+    <br><br>
+    <label for="tanggal-lahir">Tanggal Lahir: </label>
+    <input type="date" id="tanggal-lahir" required>
+    <br><br>
+    <button onclick="startAnimation()">Submit</button>
+  </div>
+
+  <div class="stars"></div>
+
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+
+  <canvas id="birthdayCanvas" class="hide"></canvas>
+
+  <!-- Musik ulang tahun -->
+  <audio id="birthdayMusic" src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
