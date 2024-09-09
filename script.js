@@ -116,28 +116,33 @@ function sketch(isBirthday, years = null, months = null) {
 
   if (isBirthday) {
     // Animasi ulang tahun
-    const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-    gradient.addColorStop(0, "#FF6F61");
-    gradient.addColorStop(0.5, "#FFDD00");
-    gradient.addColorStop(1, "#FF6F61");
+    const gradientText = context.createLinearGradient(0, 0, canvas.width, 0);
+    gradientText.addColorStop(0, "#FF6F61");
+    gradientText.addColorStop(0.5, "#FFDD00");
+    gradientText.addColorStop(1, "#FF6F61");
 
-    context.font = "bold 70px 'Poppins', sans-serif";
-    context.fillStyle = gradient;
+    context.font = "bold 80px 'Poppins', sans-serif";
+    context.fillStyle = gradientText;
     context.textAlign = "center";
     context.shadowColor = "rgba(0,0,0,0.5)";
-    context.shadowBlur = 15;
-    context.fillText(`Happy Birthday ${nama}!🎉✨`, canvas.width / 2, canvas.height / 2 - 50);
+    context.shadowBlur = 20;
+    context.fillText(`Happy Birthday ${nama}!🎉✨`, canvas.width / 2, canvas.height / 2 - 60);
 
-    context.font = "40px Arial";
-    context.fillStyle = "#FFD700";
-    context.fillText(`Enjoy your ${usia} years! 🎂💖`, canvas.width / 2, canvas.height / 2 + 50);
+    context.font = "50px 'Poppins', sans-serif";
+    context.fillStyle = gradientText;
+    context.fillText(`Enjoy your ${usia} years! 🎂💖`, canvas.width / 2, canvas.height / 2 + 60);
   } else {
     // Tampilkan umur jika bukan ulang tahun
-    context.font = "bold 60px 'Poppins', sans-serif";
-    context.fillStyle = "#FF6F61";
+    const gradientText = context.createLinearGradient(0, 0, canvas.width, 0);
+    gradientText.addColorStop(0, "#FF6F61");
+    gradientText.addColorStop(0.5, "#FFD700");
+    gradientText.addColorStop(1, "#FF6F61");
+
+    context.font = "bold 70px 'Poppins', sans-serif";
+    context.fillStyle = gradientText;
     context.textAlign = "center";
     context.shadowColor = "rgba(0,0,0,0.5)";
-    context.shadowBlur = 15;
+    context.shadowBlur = 20;
     context.fillText(`${nama}, you are ${years} years and ${months} months old!`, canvas.width / 2, canvas.height / 2);
   }
 
