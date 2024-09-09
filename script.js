@@ -121,14 +121,14 @@ function sketch(isBirthday, years = null, months = null) {
     gradientText.addColorStop(0.5, "#FFDD00");
     gradientText.addColorStop(1, "#FF6F61");
 
-    context.font = "bold 80px 'Poppins', sans-serif";
+    context.font = "bold 72px 'Poppins', sans-serif";
     context.fillStyle = gradientText;
     context.textAlign = "center";
     context.shadowColor = "rgba(0,0,0,0.5)";
     context.shadowBlur = 20;
     context.fillText(`Happy Birthday ${nama}!🎉✨`, canvas.width / 2, canvas.height / 2 - 60);
 
-    context.font = "50px 'Poppins', sans-serif";
+    context.font = "56px 'Poppins', sans-serif";
     context.fillStyle = gradientText;
     context.fillText(`Enjoy your ${usia} years! 🎂💖`, canvas.width / 2, canvas.height / 2 + 60);
   } else {
@@ -138,7 +138,7 @@ function sketch(isBirthday, years = null, months = null) {
     gradientText.addColorStop(0.5, "#FFD700");
     gradientText.addColorStop(1, "#FF6F61");
 
-    context.font = "bold 70px 'Poppins', sans-serif";
+    context.font = "bold 56px 'Poppins', sans-serif";
     context.fillStyle = gradientText;
     context.textAlign = "center";
     context.shadowColor = "rgba(0,0,0,0.5)";
