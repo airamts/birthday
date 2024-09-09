@@ -12,6 +12,10 @@ const maxConfetti = 100; // Jumlah maksimal konfeti
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+document.addEventListener('DOMContentLoaded', () => {
+  music.volume = 0.5; // Atur volume ke 50%
+});
+
 function startAnimation() {
   nama = document.getElementById('nama').value;
   tanggalLahir = document.getElementById('tanggal-lahir').value;
